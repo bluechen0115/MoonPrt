@@ -22,7 +22,7 @@ public class MemberDaoImpl implements MemberDao{
 		Statement stmt=null;
 		ResultSet rs=null;
 		MemberDto member=new MemberDto();
-		String sql="select * from member where id="+"'"+id+"'";
+		String sql="select * from zzzmember where id="+"'"+id+"'";
 		stmt=conn.createStatement();
 		rs=stmt.executeQuery(sql);
 		if(rs.next()) {
@@ -43,7 +43,7 @@ public class MemberDaoImpl implements MemberDao{
 	@Override
 	public void InsertMember(MemberDto member) throws SQLException{
 		PreparedStatement pstmt=null;
-		String sql="insert into member (name,id,pwd,phone) values (?,?,?,?)";
+		String sql="insert into zzzmember (name,id,pwd,phone) values (?,?,?,?)";
 		pstmt=conn.prepareStatement(sql);
 		pstmt.setString(1, member.getName());
 		pstmt.setString(2, member.getId());
@@ -58,7 +58,7 @@ public class MemberDaoImpl implements MemberDao{
 	@Override
 	public void DeleteMemberById(String id) throws SQLException{
 		Statement stmt=null;
-		String sql="delete from member where id="+"'"+id+"'";
+		String sql="delete from zzzmember where id="+"'"+id+"'";
 		stmt=conn.createStatement();
 		stmt.executeUpdate(sql);
 		stmt.close();
@@ -68,7 +68,7 @@ public class MemberDaoImpl implements MemberDao{
 	@Override
 	public void UpdateMemberById(MemberDto member) throws SQLException {
 		PreparedStatement pstmt=null;
-		String sql="update member set name=?,pwd=?,phone=? where id=?";
+		String sql="update zzzmember set name=?,pwd=?,phone=? where id=?";
 		pstmt=conn.prepareStatement(sql);
 		pstmt.setString(1, member.getName());
 		pstmt.setString(2, member.getPwd());

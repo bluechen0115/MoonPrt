@@ -19,9 +19,9 @@ public class DataSource {
 		   
 	    Connection conn = null;
         try {
-        	 String user = "hr"; 
-     	    String pw = "hr";
-     	    String url = "jdbc:oracle:thin:@localhost:59162:xe";
+        	 String user = "CE1261043"; 
+     	    String pw = "wlfkfak33";
+     	    String url = "jdbc:oracle:thin:@203.250.143.243:1521:xe";
             
             Class.forName("oracle.jdbc.driver.OracleDriver");        
             conn = DriverManager.getConnection(url, user, pw);

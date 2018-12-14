@@ -24,7 +24,7 @@ public class FreeBoardDaoImpl implements FreeBoardDao {
 	@Override
 	public void InsertBoard(FreeBoardDto board) throws SQLException{
 		PreparedStatement pstmt=null;
-		String sql="insert into freeboard (bno,writer,title,contents) values(freeboad_seq.nextval,?,?,?)";
+		String sql="insert into zzzfreeboard (bno,writer,title,contents) values(zzzfreeboad_seq.nextval,?,?,?)";
 		pstmt=conn.prepareStatement(sql);
 		pstmt.setString(1, board.getWriter());
 		pstmt.setString(2, board.getTitle());
@@ -37,7 +37,7 @@ public class FreeBoardDaoImpl implements FreeBoardDao {
 	@Override
 	public void UpdateBoard(FreeBoardDto board) throws SQLException{
 		PreparedStatement pstmt=null;
-		String sql="update freeboard set title=?,contents=? where bno=?";
+		String sql="update zzzfreeboard set title=?,contents=? where bno=?";
 		pstmt=conn.prepareStatement(sql);
 		pstmt.setString(1, board.getTitle());
 		pstmt.setString(2, board.getContents());
@@ -50,7 +50,7 @@ public class FreeBoardDaoImpl implements FreeBoardDao {
 	@Override
 	public void DeleteBoardByBno(int bno) throws SQLException{
 		Statement stmt=null;
-		String sql="delete from freeboard where bno="+bno;
+		String sql="delete from zzzfreeboard where bno="+bno;
 		stmt=conn.createStatement();
 		stmt.executeQuery(sql);
 		stmt.close();
@@ -62,7 +62,7 @@ public class FreeBoardDaoImpl implements FreeBoardDao {
 		List<FreeBoardDto> FreeBoardList=new ArrayList<FreeBoardDto>();
 		ResultSet rs=null;
 		Statement stmt=null;
-		String sql="select * from freeboard order by bno desc";
+		String sql="select * from zzzfreeboard order by bno desc";
 		stmt=conn.createStatement();
 		rs=stmt.executeQuery(sql);
 		while(rs.next()) {
@@ -83,7 +83,7 @@ public class FreeBoardDaoImpl implements FreeBoardDao {
 		Statement stmt=null;
 		ResultSet rs=null;
 		FreeBoardDto board=new FreeBoardDto();
-		String sql="select * from freeboard where bno="+bno;
+		String sql="select * from zzzfreeboard where bno="+bno;
 		stmt=conn.createStatement();
 		rs=stmt.executeQuery(sql);
 		if(rs.next()) {

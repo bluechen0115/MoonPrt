@@ -70,12 +70,20 @@ location.href="<%=request.getContextPath()%>/index.jsp"
 </tr>
 </c:forEach>
 
+
+
 </table>
 
+<button type="button" id="fbwbtn">글쓰기</button>
 
 
 
+<script>
+$('#fbwbtn').on('click',function(){
+	location.href="write";
+});
 
+</script>
 
 
 

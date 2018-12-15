@@ -65,7 +65,7 @@ location.href="<%=request.getContextPath()%>/index.jsp"
 <c:forEach items="${showList}" var="board">
 <tr>
 <td>${board.bno }</td>
-<td>${board.title }</td>
+<td><a href="<%=request.getContextPath() %>/fbDetail?bno=${board.bno }">${board.title }</a></td>
 <td>${board.writer }</td>
 </tr>
 </c:forEach>

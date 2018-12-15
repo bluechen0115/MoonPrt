@@ -10,6 +10,17 @@ public class FreeBoardDto {
 	private Date WriteDate;
 	private String title;
 	
+	public FreeBoardDto(){}
+	
+	public FreeBoardDto(int bno, String writer, String contents, Date writeDate, String title) {
+		super();
+		this.bno = bno;
+		this.writer = writer;
+		this.contents = contents;
+		WriteDate = writeDate;
+		this.title = title;
+	}
+
 	@Override
 	public String toString() {
 		return "FreeBoardDto [bno=" + bno + ", writer=" + writer + ", contents=" + contents + ", WriteDate=" + WriteDate

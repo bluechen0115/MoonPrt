@@ -26,11 +26,11 @@ public class FreeBoardWriteController extends HttpServlet {
 		{
 			board.setTitle(request.getParameter("title"));
 			board.setContents(request.getParameter("contents"));
-			board.setWriter(request.getParameter("wirter"));
+			board.setWriter(request.getParameter("writer"));
 		}
 		freeBoardService.WriteBoard(board);
 		
-	response.sendRedirect("/main");
+	response.sendRedirect("main");
 		
 	}
 

@@ -18,12 +18,13 @@ resize: none;
 <body>
 
 <div id="wbrd">
-<form action="<%=request.getContextPath() %>/write" method="post"><br/>
-<input type="text" name="title" id="title"/><br/>
-<input type="hidden" name="contents" id="contents"/>
-<textarea rows="20" cols="40" id="tta"></textarea><br/>
+<form action="<%=request.getContextPath() %>/updateText" method="post"><br/>
+<input type="text" name="title" id="title" value="${board.title }"/><br/>
+<input type="hidden" name="contents" id="contents" value="${board.contents }"/>
+<textarea rows="20" cols="40" id="tta">${board.contents}</textarea><br/>
 <input type="text" value="${loginUser.id}" readonly name="writer" id="writer"/><br/>
-<input type="submit" value="글쓰기"/>
+<input type="hidden" value="${board.bno}" name="bno"/>
+<input type="submit" value="수정하기"/>
 </form>
 
 

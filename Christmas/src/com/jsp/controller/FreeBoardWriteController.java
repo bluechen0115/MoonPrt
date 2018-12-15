@@ -16,7 +16,7 @@ import com.jsp.service.FreeBoardServiceImpl;
 public class FreeBoardWriteController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	FreeBoardService freeBoardService=FreeBoardServiceImpl.getInstance();
+	FreeBoardService freeBoardService=new FreeBoardServiceImpl();
 	FreeBoardDto board=new FreeBoardDto();
 	{
 	board.setTitle(request.getParameter("title"));

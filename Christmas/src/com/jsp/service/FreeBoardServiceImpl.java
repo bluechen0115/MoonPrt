@@ -18,11 +18,11 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 		freeBoardDao.setConn(conn);
 	}
 	
-	private static FreeBoardService instance=new FreeBoardServiceImpl();
+/*	private static FreeBoardService instance=new FreeBoardServiceImpl();
 	private FreeBoardServiceImpl() {}
 	public static FreeBoardService getInstance() {
 		return instance;
-	}
+	}*/
 
 	@Override
 	public void WriteBoard(FreeBoardDto board) {

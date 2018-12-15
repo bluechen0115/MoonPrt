@@ -37,7 +37,6 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 	String loginPwd=request.getParameter("pwd");
 	
 	MemberService service=new MemberSerivceImpl();
-	FreeBoardService freeBoardService=FreeBoardServiceImpl.getInstance();
 	MemberDto member=service.LoginMember(loginId);
 	String msg;
 	HttpSession session=request.getSession();

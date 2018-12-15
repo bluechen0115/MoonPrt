@@ -22,7 +22,7 @@ import com.jsp.service.FreeBoardServiceImpl;
 public class FreeBoardListController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	FreeBoardService freeBoardService=FreeBoardServiceImpl.getInstance();
+	FreeBoardService freeBoardService=new FreeBoardServiceImpl();
 	List<FreeBoardDto> freeBoardList=(ArrayList<FreeBoardDto>)freeBoardService.ShowBoardAll();
 	request.setAttribute("showList", freeBoardList);
 	request.getRequestDispatcher("/main.jsp").forward(request, response);

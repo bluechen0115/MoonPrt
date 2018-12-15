@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.jsp.dto.FreeBoardDto;
@@ -24,7 +26,7 @@ public class FreeBoardDaoImpl implements FreeBoardDao {
 	@Override
 	public void InsertBoard(FreeBoardDto board) throws SQLException{
 		PreparedStatement pstmt=null;
-		String sql="insert into zzzfreeboard (bno,writer,title,contents) values(zzzfreeboad_seq.nextval,?,?,?)";
+		String sql="insert into zzzfreeboard (bno,writer,title,contents) values(zzzfreeboard_seq.nextval,?,?,?)";
 		pstmt=conn.prepareStatement(sql);
 		pstmt.setString(1, board.getWriter());
 		pstmt.setString(2, board.getTitle());

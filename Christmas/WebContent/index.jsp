@@ -61,6 +61,9 @@ background-size:1960px 1280px;
 	height:100%;
 	display:none;
 }
+#modalDiv {
+opicity:1.0;
+}
 .tblIn{
 	color:white;
 }

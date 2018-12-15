@@ -41,15 +41,13 @@ location.href="<%=request.getContextPath()%>/index.jsp"
 <th>글번호</th>
 <th>제목</th>
 <th>작성자</th>
-<th>날짜</th>
 </tr>
 
-<c:forEach items="${showList} vars="board">
+<c:forEach items="${showList}" var="board">
 <tr>
 <td>${board.bno }</td>
 <td>${board.title }</td>
 <td>${board.writer }</td>
-<td><fmt:formatDate value="${board.WriteDate }" pattern="yyyy-MM-dd"/></td>
 </tr>
 </c:forEach>
 

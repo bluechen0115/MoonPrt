@@ -17,12 +17,31 @@ background-image: url('image/ChristmasBackground.jpg');
 background-color: #D9E5FF;
 background-size:1700px 1100px;
 }
+#1{
+width:30px;
+}
+#2{
+width:600px;
+}
+#3{
+width:100px;
+}
+#rr{
+width:770px;
+}
+#fbt{
+margin:0 auto;
+margin-top:200px;
+}
+
 </style>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <body>
-<%=(String)session.getAttribute("msg")%>
 <%
+if(session.getAttribute("msg")!=null){
+out.print((String)session.getAttribute("msg"));
 session.removeAttribute("msg");
+}
 MemberDto member=(MemberDto)session.getAttribute("loginUser");
 if(session.getAttribute("loginUser")==null){
 %>
@@ -36,11 +55,11 @@ location.href="<%=request.getContextPath()%>/index.jsp"
 
 
 
-<table border="1">
-<tr>
-<th>글번호</th>
-<th>제목</th>
-<th>작성자</th>
+<table border="1" id="fbt">
+<tr id="rr">
+<th id="1">글번호</th>
+<th id="2">제목</th>
+<th id="3">작성자</th>
 </tr>
 
 <c:forEach items="${showList}" var="board">

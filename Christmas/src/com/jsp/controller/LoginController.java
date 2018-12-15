@@ -56,9 +56,9 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		
 	}
 	session.setAttribute("msg", msg);
-	List<FreeBoardDto> showList=(ArrayList<FreeBoardDto>)freeBoardService.ShowBoardAll();
-	request.setAttribute("showList", showList);
-	request.getRequestDispatcher("/main.jsp").forward(request, response);
+	
+	response.sendRedirect("main");
+	
 	return;
 	
 	}

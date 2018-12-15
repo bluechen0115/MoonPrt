@@ -12,22 +12,25 @@ import com.jsp.service.FreeBoardService;
 import com.jsp.service.FreeBoardServiceImpl;
 
 
-@WebServlet("/FreeBoardWriteController")
+@WebServlet("/write")
 public class FreeBoardWriteController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	FreeBoardService freeBoardService=new FreeBoardServiceImpl();
-	FreeBoardDto board=new FreeBoardDto();
-	{
-	board.setTitle(request.getParameter("title"));
-	board.setContents(request.getParameter("contents"));
-	board.setWriter(request.getParameter("wirter"));
-	}
-	freeBoardService.WriteBoard(board);
+	request.getRequestDispatcher("/writepage.jsp").forward(request, response);
 	
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		FreeBoardService freeBoardService=new FreeBoardServiceImpl();
+		FreeBoardDto board=new FreeBoardDto();
+		{
+			board.setTitle(request.getParameter("title"));
+			board.setContents(request.getParameter("contents"));
+			board.setWriter(request.getParameter("wirter"));
+		}
+		freeBoardService.WriteBoard(board);
+		
+	response.sendRedirect("/main");
 		
 	}
 
